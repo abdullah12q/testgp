@@ -7,7 +7,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DB_PATH = path.join(__dirname, "..", "vulnerable.db");
+
+const isProd = process.env.NODE_ENV === "production" || process.env.VERCEL;
+const DB_PATH = isProd
+  ? path.join("/tmp", "vulnerable.db")
+  : path.join(__dirname, "..", "vulnerable.db");
 
 const db = new Database(DB_PATH);
 
