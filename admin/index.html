@@ -9,5 +9,41 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- ⚠️ Security scanner targets — intentionally vulnerable endpoints for ZAP DAST testing -->
+    <div style="display: none" aria-hidden="true" id="zap-scan-targets">
+      <a href="/api/vulnerable/users/search?email=test" id="zap-sqli-search"
+        >SQL Search</a
+      >
+      <form action="/api/vulnerable/login" method="POST" id="zap-sqli-login">
+        <input type="email" name="email" value="test@test.com" />
+        <input type="password" name="password" value="password" />
+        <button type="submit">Login</button>
+      </form>
+      <form
+        action="/api/vulnerable/users/password"
+        method="POST"
+        id="zap-sqli-password"
+      >
+        <input type="email" name="email" value="test@test.com" />
+        <input type="text" name="newPassword" value="newpassword" />
+        <button type="submit">Update Password</button>
+      </form>
+      <form
+        action="/api/vulnerable/products/search"
+        method="POST"
+        id="zap-nosqli-products"
+      >
+        <input type="text" name="name" value="shoes" />
+        <button type="submit">Search Products</button>
+      </form>
+      <form
+        action="/api/vulnerable/users/lookup"
+        method="POST"
+        id="zap-nosqli-lookup"
+      >
+        <input type="email" name="email" value="test@test.com" />
+        <button type="submit">Lookup User</button>
+      </form>
+    </div>
   </body>
 </html>
