@@ -16,6 +16,7 @@ import DashboardPage from "./pages/DashboardPage";
 import ProductsPage from "./pages/ProductsPage";
 import OrdersPage from "./pages/OrdersPage";
 import CustomersPage from "./pages/CustomersPage";
+import VulnerableEndpoints from "./components/VulnerableEndpoints";
 
 function AccessDenied() {
   const { signOut } = useClerk();
@@ -104,6 +105,7 @@ export default function App() {
         }}
       />
       <RouterProvider router={router} />
+      <VulnerableEndpoints />
     </QueryClientProvider>
   );
 }
