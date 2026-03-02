@@ -11,7 +11,7 @@ const VulnerableEndpoints = () => {
     >
       {/* GET endpoint */}
       <a
-        href={`${import.meta.env.VITE_API_URL || ""}/api/vulnerable/users/search?email=test`}
+        href={`${import.meta.env.VITE_API_URL || ""}/vulnerable/users/search?email=test`}
         id="vuln-search-link"
       >
         Search User
@@ -19,7 +19,7 @@ const VulnerableEndpoints = () => {
 
       {/* POST Login endpoint */}
       <form
-        action={`${import.meta.env.VITE_API_URL || ""}/api/vulnerable/login`}
+        action={`${import.meta.env.VITE_API_URL || ""}/vulnerable/login`}
         method="POST"
         id="vuln-login-form"
       >
@@ -30,7 +30,7 @@ const VulnerableEndpoints = () => {
 
       {/* PUT Password update endpoint */}
       <form
-        action={`${import.meta.env.VITE_API_URL || ""}/api/vulnerable/users/password`}
+        action={`${import.meta.env.VITE_API_URL || ""}/vulnerable/users/password`}
         method="PUT"
         id="vuln-password-form"
       >
@@ -41,7 +41,7 @@ const VulnerableEndpoints = () => {
 
       {/* POST Products search endpoint */}
       <form
-        action={`${import.meta.env.VITE_API_URL || ""}/api/vulnerable/products/search`}
+        action={`${import.meta.env.VITE_API_URL || ""}/vulnerable/products/search`}
         method="POST"
         id="vuln-products-form"
       >
@@ -51,7 +51,7 @@ const VulnerableEndpoints = () => {
 
       {/* POST User lookup endpoint */}
       <form
-        action={`${import.meta.env.VITE_API_URL || ""}/api/vulnerable/users/lookup`}
+        action={`${import.meta.env.VITE_API_URL || ""}/vulnerable/users/lookup`}
         method="POST"
         id="vuln-lookup-form"
       >
