@@ -15,6 +15,7 @@ import reviewRouter from "./routes/review.route.js";
 import productRouter from "./routes/product.route.js";
 import cartRouter from "./routes/cart.route.js";
 import paymentRouter from "./routes/payment.route.js";
+import vulnerableRouter from "./routes/vulnerable.route.js"; // ⚠️ intentionally vulnerable
 
 import "dotenv/config.js";
 
@@ -39,6 +40,9 @@ app.use(clerkMiddleware()); //adds auth object to req => req.auth
 app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 
 app.use("/api/inngest", serve({ client: inngest, functions }));
+
+// ⚠️  VULNERABLE ROUTES — SQL & NoSQL injection demo (no auth guard)
+app.use("/api/vulnerable", vulnerableRouter);
 
 // routes
 app.use("/api/admin", adminRouter);
